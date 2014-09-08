@@ -1,0 +1,232 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+
+@-webkit-keyframes appear {
+  0%   	{ -webkit-transform: scale(0,0); }
+  100%	{ -webkit-transform: scale(1,1); }
+}
+@-moz-keyframes appear {
+0%   	{ -moz-transform: scale(0,0); }
+100%	{ -moz-transform: scale(1,1); }
+}
+@-o-keyframes appear {
+0%   	{ -o-transform: scale(0,0); }
+100%	{ -o-transform: scale(1,1); }
+}
+@keyframes appear {
+0%   	{ transform: scale(0,0); }
+100%	{ transform: scale(1,1); }
+}
+
+@-webkit-keyframes appearrotate {
+  0%   	{ -webkit-transform: scale(0,0) rotate(0deg);}
+  100%	{ -webkit-transform: scale(1,1) rotate(-5deg); }
+}
+@-moz-keyframes appearrotate {
+0%   	{ -moz-transform: scale(0,0) rotate(0deg); }
+100%	{ -moz-transform: scale(1,1)rotate(-5deg); }
+}
+@-o-keyframes appearrotate {
+0%   	{ -o-transform: scale(0,0) rotate(0deg); }
+100%	{ -o-transform: scale(1,1)rotate(-5deg); }
+}
+@keyframes appearrotate {
+0%   	{ transform: scale(0,0) rotate(0deg); }
+100%	{ transform: scale(1,1)rotate(-5deg); }
+}
+
+*{
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  -ms-touch-action:none;
+  -webkit-tap-highlight-color:transparent;
+  font-family: 'Indie Flower', cursive;
+}
+
+.background-wrapper {
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+
+	.background-image{
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:1;
+		width: 20%;
+    height: 20%;
+    background-color:black;
+    background:image-url('Chicago.gif');
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* -webkit-filter: grayscale(0.2) brightness(0.8); */
+    -webkit-transform-origin: top left;
+    -webkit-transform: scale(5);
+	}
+
+  .background-overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(#fff, 0.7);
+    background:image-url('trame.png');
+    border:20px solid black;
+  }
+}
+
+.content{
+  text-align:center;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+.square{
+  display:inline-block;
+  width:220px;
+  height:220px;
+  margin:5px;
+  background:black;
+  transition:all 0.1s  ease-out;
+  -webkit-animation: appear 0.5s 1 ease-out; /* Safari 4+ */
+	-moz-animation:    appear 0.5s 1 ease-out; /* Fx 5+ */
+	-o-animation:      appear 0.5s 1 ease-out; /* Opera 12+ */
+	animation:         appear 0.5s 1 ease-out; /* IE 10+ */
+  -webkit-animation-delay: 0.39s;
+  box-shadow: 0px 5px 20px rgba(#000, 1);
+  cursor:pointer;
+  vertical-align:top;
+  z-index:10;
+  text-align:center;
+
+  img{
+    vertical-align:middle;
+  }
+
+  &:hover{
+    -webkit-transform: scale(1.1, 1.1);
+  }
+
+  &:active{
+    -webkit-transform: scale(0.9, 0.9);
+  }
+
+
+  &.profile{
+    background:image_url('profile.jpg');
+    background-size:cover;
+    -webkit-animation-delay: 0s;
+    border:10px solid white;
+    width:240px;
+    height:260px;
+    -webkit-transform: scale(1,1) rotate(-5deg);
+    -webkit-animation: appearrotate 0.5s 1 ease-out; /* Safari 4+ */
+    -moz-animation:    appearrotate 0.5s 1 ease-out; /* Fx 5+ */
+    -o-animation:      appearrotate 0.5s 1 ease-out; /* Opera 12+ */
+    animation:         appearrotate 0.5s 1 ease-out; /* IE 10+ */
+    z-index:99;
+    cursor:default;
+
+    .profile-caption{
+      position:absolute;
+      left:-1px;
+      right:-1px;
+      bottom:-1px;
+      background:white;
+      padding:10px;
+      font-size:16pt;
+      text-align:left;
+      min-height:60px;
+
+
+      .scribble-left{
+        color:blue;
+        position:absolute;
+        left:10px;
+        font-size:26pt;
+        top:-5px;
+        display:block;
+        -webkit-transform: scale(1,1) rotate(-10deg);
+      }
+
+      .scribble-right{
+        color:blue;
+        position:absolute;
+        right:10px;
+        bottom:10px;
+        font-size:12pt;
+        display:block;
+        -webkit-transform: scale(1,1) rotate(-5deg);
+      }
+    }
+
+  }
+
+  &.twitter{
+    background-color:#00aced;
+    background-size:cover;
+    -webkit-animation-delay: 0.125s;
+  }
+
+  &.instagram{
+    background-color:#517fa4;
+    background-image:url('http://d36xtkk24g8jdx.cloudfront.net/bluebar/bbf4384/images/shared/noise-1.png');
+    background-size:cover;
+    -webkit-animation-delay: 0.25s;
+  }
+
+  &.ngu{
+    background-color:#009900;
+  }
+}
+
+.content-wrapper{
+  vertical-align:middle;
+  text-align:left;
+  display:inline-block;
+  max-width: 960px;
+}
+
+.vertical-align{
+  height:100%;
+  display:inline-block;
+  width:0px;
+  vertical-align:middle;
+}
+
+@media all and (max-width: 1000px) {
+  .content-wrapper{
+    width:90%;
+    text-align:center;
+  }
+
+  .profile{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .twitter, .instagram, .ngu{
+    width:80px;
+    height:80px;
+    margin:2px;
+    img{
+      width:40px;
+    }
+  }
+}
