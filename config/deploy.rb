@@ -2,13 +2,21 @@
 lock '3.2.1'
 
 set :application, 'benhoad.net'
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :repo_url, 'git@github.com:benhoad/benhoad.net.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
 # set :deploy_to, '/var/www/my_app'
+
+set :deploy_to, "/home/rails/"
+set :deploy_via, :copy
+
+set :user, "www-data"
+set :group, "www-data"
+
+set :bundle_flags, '--deployment'
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -22,6 +30,10 @@ set :repo_url, 'git@example.com:me/my_repo.git'
 # Default value for :pty is false
 # set :pty, true
 
+
+set :linked_files, %w{config/database.yml}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+
 # Default value for :linked_files is []
 # set :linked_files, %w{config/database.yml}
 
@@ -33,6 +45,7 @@ set :repo_url, 'git@example.com:me/my_repo.git'
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+set :keep_releases, 5
 
 namespace :deploy do
 
@@ -41,6 +54,7 @@ namespace :deploy do
     on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
       # execute :touch, release_path.join('tmp/restart.txt')
+      sudo "service unicorn restart"
     end
   end
 
@@ -54,5 +68,4 @@ namespace :deploy do
       # end
     end
   end
-
 end
