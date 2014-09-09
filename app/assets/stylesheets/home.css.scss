@@ -58,23 +58,11 @@
 	left:0;
 	right:0;
 	bottom:0;
+  background:image-url('Chicago.gif');
+  background-position: 50% 50%;
+  background-size: cover;
 
-	.background-image{
-    position:absolute;
-    top:0;
-    left:0;
-    opacity:1;
-		width: 20%;
-    height: 20%;
-    background-color:black;
-    background:image-url('Chicago.gif');
-    background-position: 50% 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    /* -webkit-filter: grayscale(0.2) brightness(0.8); */
-    -webkit-transform-origin: top left;
-    -webkit-transform: scale(5);
-	}
+
 
 
 }
