@@ -1,7 +1,7 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300);
 
 @-webkit-keyframes appear {
   0%   	{ -webkit-transform: scale(0,0); }
@@ -48,7 +48,8 @@
   user-select:none;
   -ms-touch-action:none;
   -webkit-tap-highlight-color:transparent;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Lato', sans-serif;
+  font-weight:100;
 }
 
 .background-wrapper {
@@ -75,16 +76,7 @@
     -webkit-transform: scale(5);
 	}
 
-  .background-overlay{
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    background:rgba(#fff, 0.7);
-    background:image-url('trame.png');
-    border:20px solid black;
-  }
+
 }
 
 .content{
@@ -98,10 +90,19 @@
 
 .square{
   display:inline-block;
-  width:220px;
-  height:220px;
+  width:80px;
+  height:80px;
+  margin:2px;
   margin:5px;
-  background:black;
+background: -moz-linear-gradient(-45deg,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.19) 99%, rgba(255,255,255,0.19) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(99%,rgba(255,255,255,0.19)), color-stop(100%,rgba(255,255,255,0.19))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.19) 99%,rgba(255,255,255,0.19) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.19) 99%,rgba(255,255,255,0.19) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.19) 99%,rgba(255,255,255,0.19) 100%); /* IE10+ */
+background: linear-gradient(135deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.19) 99%,rgba(255,255,255,0.19) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#30ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+  border-radius:100px;
   transition:all 0.1s  ease-out;
   -webkit-animation: appear 0.5s 1 ease-out; /* Safari 4+ */
 	-moz-animation:    appear 0.5s 1 ease-out; /* Fx 5+ */
@@ -113,9 +114,11 @@
   vertical-align:top;
   z-index:10;
   text-align:center;
+  border-top:1px solid rgba(#fff,0.4);
 
   img{
     vertical-align:middle;
+    width:40px;
   }
 
   &:hover{
@@ -126,78 +129,23 @@
     -webkit-transform: scale(0.9, 0.9);
   }
 
-
-  &.profile{
-    background:image_url('profile.jpg');
-    background-size:cover;
-    -webkit-animation-delay: 0s;
-    border:10px solid white;
-    width:240px;
-    height:260px;
-    -webkit-transform: scale(1,1) rotate(-5deg);
-    -webkit-animation: appearrotate 0.5s 1 ease-out; /* Safari 4+ */
-    -moz-animation:    appearrotate 0.5s 1 ease-out; /* Fx 5+ */
-    -o-animation:      appearrotate 0.5s 1 ease-out; /* Opera 12+ */
-    animation:         appearrotate 0.5s 1 ease-out; /* IE 10+ */
-    z-index:99;
-    cursor:default;
-
-    .profile-caption{
-      position:absolute;
-      left:-1px;
-      right:-1px;
-      bottom:-1px;
-      background:white;
-      padding:10px;
-      font-size:16pt;
-      text-align:left;
-      min-height:60px;
-
-
-      .scribble-left{
-        color:blue;
-        position:absolute;
-        left:10px;
-        font-size:26pt;
-        top:-5px;
-        display:block;
-        -webkit-transform: scale(1,1) rotate(-10deg);
-      }
-
-      .scribble-right{
-        color:blue;
-        position:absolute;
-        right:10px;
-        bottom:10px;
-        font-size:12pt;
-        display:block;
-        -webkit-transform: scale(1,1) rotate(-5deg);
-      }
-    }
-
-  }
-
   &.twitter{
-    background-color:#00aced;
     background-size:cover;
     -webkit-animation-delay: 0.125s;
   }
 
   &.instagram{
-    background-color:#517fa4;
-    background-image:url('http://d36xtkk24g8jdx.cloudfront.net/bluebar/bbf4384/images/shared/noise-1.png');
     background-size:cover;
     -webkit-animation-delay: 0.25s;
   }
 
   &.ngu{
-    background-color:#009900;
   }
 }
 
 .content-wrapper{
   vertical-align:middle;
-  text-align:left;
+  text-align:center;
   display:inline-block;
   max-width: 960px;
 }
@@ -208,6 +156,35 @@
   width:0px;
   vertical-align:middle;
 }
+
+h1, h2{
+  color:white;
+  text-shadow:0px 0px 5px #000;
+  font-weight:100;
+}
+
+h1{
+  font-size:32pt;
+}
+
+.profile{
+  background:image_url('profile.jpg');
+  background-size:cover;
+  -webkit-animation-delay: 0s;
+  box-shadow:0px 10px 20px rgba(#000, 0.7);
+  width:240px;
+  height:240px;
+  z-index:99;
+  border-radius:200px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:20px;
+  overflow:hidden;
+  position:relative
+
+
+
+  }
 
 @media all and (max-width: 1000px) {
   .content-wrapper{
