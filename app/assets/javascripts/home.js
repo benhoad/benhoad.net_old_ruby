@@ -1,5 +1,6 @@
 cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () {
   document.getElementById('profile').style.background = "url('/images/heman.gif')";
+  document.getElementById('background').style.background = "url('/images/heman2.gif') 50% 50%";
 });
 
 
