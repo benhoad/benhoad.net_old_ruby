@@ -37,6 +37,10 @@
 100%	{ transform: scale(1,1)rotate(-5deg); }
 }
 
+body{
+
+}
+
 *{
   box-sizing:border-box;
   -moz-box-sizing:border-box;
@@ -78,6 +82,9 @@ a{
   left:0;
   right:0;
   bottom:0;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  perspective: 800px;
 }
 
 .square{
@@ -132,6 +139,10 @@ a{
   display:inline-block;
   max-width: 960px;
   background:rgba(#000, 0.7);
+  -webkit-transition: 150ms all ease-out;
+  -moz-transition: 150ms all ease-out;
+  transition: 150ms al ease-out;
+
 
 }
 
