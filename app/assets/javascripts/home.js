@@ -1,7 +1,7 @@
 cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () {
   document.getElementById('profile').style.background = "url('/images/heman.gif')";
   // document.getElementById('background').style.background = "url('/images/heman2.gif') 50% 50%";
-  document.getElementById('background').innerHTML = '<iframe width="100%" height="100%" src="//www.youtube.com/embed/w5FUu6GM__U?autoplay=1" frameborder="0" allowfullscreen></iframe>'
+  document.getElementById('background').innerHTML = '<iframe width="100%" height="100%" src="//www.youtube.com/embed/w5FUu6GM__U?autoplay=1&loop=1&modestbranding=1&rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>'
 });
 
 
